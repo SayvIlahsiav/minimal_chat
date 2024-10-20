@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:minimal_chat/screens/login_screen.dart';
+import 'package:minimal_chat/screens/register_screen.dart';
 import 'package:minimal_chat/screens/splash_screen.dart';
 
 void main() {
@@ -15,7 +17,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      initialRoute: SplashScreen.id,
+      routes: {
+        SplashScreen.id: (context) => const SplashScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
+        RegisterScreen.id: (context) => const RegisterScreen(),
+      },
     );
   }
 }
